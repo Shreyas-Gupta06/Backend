@@ -7,16 +7,7 @@ FILE_PATH = os.path.join(os.path.dirname(__file__), 'bits_ids.txt')
 ids = read_ids(FILE_PATH)
 
 
-# def text_format(request):
-#     return HttpResponse('\n'.join(ids), content_type='text/plain')
 
-# def text_format(request):
-#     x = request.GET.get('format')
-
-#     if (x=='text'):
-#         return HttpResponse('\n'.join(ids), content_type='text/plain')
-#     else:
-#         return JsonResponse({'error': 'No matching format found'}, status=404)
     
 
 
@@ -45,10 +36,6 @@ def id_details(request, uid):
 
     return JsonResponse(details)
 
-
-
-
-
 def filter_by_query(request):
     # Get query parameters
     current_branch = request.GET.get('branch')
@@ -60,10 +47,10 @@ def filter_by_query(request):
     # Filter by branch if the 'branch' parameter is provided
     if current_branch:
         branch_mapping = {
-            'chem': 'A1', 'civil': 'A2', 'eee': 'A3', 'mech': 'A4',
-            'pharma': 'A5', 'fake': 'A6', 'cs': 'A7', 'eni': 'A8',
-            'bio': 'B1', 'eco': 'B2', 'math': 'B3', 'phy': 'B4',
-            'ece': 'B5', 'genstudies': 'GS'
+            'chemical': 'A1', 'civil': 'A2', 'eee': 'A3', 'mech': 'A4',
+            'pharma': 'A5', 'biotech': 'A6', 'cs': 'A7', 'eni': 'A8',
+            'bio': 'B1', 'chem':'B2', 'eco': 'B3', 'math': 'B4', 'phy': 'B5',
+            'ece': 'B5', 'genstudies': 'GS','manu':'AB',
         }
 
         if current_branch in branch_mapping:
