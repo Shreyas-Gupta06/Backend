@@ -6,13 +6,6 @@ import os
 FILE_PATH = os.path.join(os.path.dirname(__file__), 'bits_ids.txt')
 ids = read_ids(FILE_PATH)
 
-
-
-    
-
-
-
-
 def id_details(request, uid):
     # Find the full ID by searching for the partial UID (last 4 digits)
     matching_ids = [id for id in ids if id[8:12] == uid]
